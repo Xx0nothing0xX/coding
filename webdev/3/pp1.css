@@ -1,0 +1,25 @@
+body {
+    background-color:gray;
+}
+
+h2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+#p1{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+.odd {
+    background-color: #3781cc;
+    color: white;
+
+}
+
+.even {
+    background-color: #53d185;
+}
+
+

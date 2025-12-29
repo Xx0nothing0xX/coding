@@ -1,0 +1,17 @@
+h2 {
+  color: white;
+  margin-top: 20px;
+}
+body {
+  width: 400px;
+  height: 300px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(52, 52, 52);
+}
+
+button {
+  width: 400px;
+  padding: 8px;
+  cursor: pointer;
+}
