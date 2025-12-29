@@ -5,3 +5,4 @@ with open("demo1.txt") as f1:
         c=eval(a)+eval(b)
         print(sorted(c))
         
+print("mic check check")
