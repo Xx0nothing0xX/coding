@@ -11,3 +11,6 @@ for i in df["Name"]:
         df.drop(df[df['Name'] == i].index[1], inplace=True)
         
 print(df)
+
+#mujhe jo krna hai wo mujhe krna hai
+
