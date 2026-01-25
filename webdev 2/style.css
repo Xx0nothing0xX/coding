@@ -419,3 +419,19 @@ body{
 
 /* noice */
 
+.ngl{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    background-color: grey;
+    color: white;
+    height: 50px;
+    align-items: center;
+    width: 170px;
+    opacity:0;
+    animation: fade 2s ease-in forwards;
+}
+
+@keyframes fade {
+    to {opacity: 1;}
+}
