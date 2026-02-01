@@ -7,6 +7,7 @@ int main(){
 }
 
 
+
 //                                                            Variables
 
 // #include<iostream>
