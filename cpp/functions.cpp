@@ -56,4 +56,4 @@ int main(){
     }
 }
 
-
+// sizeof function gives bit size
