@@ -1,7 +1,7 @@
 // #include<iostream>
 // using namespace std;
 // int main(){
-//     int arr[5] = {1,2,3,4,5};   //decleration
+//     int arr[5] = {1,2,3,4,5};                     //decleration
 //     for ( int i=0; i<=4; i++){
 //         cout<<arr[i]<<" ";
 //     }
@@ -47,7 +47,7 @@
 
 
 
-//    2D arrays
+//                                                        2D arrays
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -70,7 +70,7 @@
 // }
 
 
-//                strings
+//                                           strings
 
 #include<iostream>
 #include<string>
