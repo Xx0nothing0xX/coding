@@ -1,35 +1,41 @@
 #typing 
 
-
 import random as r
-l=open("20k.txt", "r")
-# ls=[]
-# for i in range(20000):
-#     ls.append(l.readline())
-# print(ls[0],"\n")
-
+with open ("20k.txt", "r") as f:
+    a = f.read().split("\n") 
 while True:
-    p=r.randint(0,20000)
-    read=l.readline(p)
-    print(read)
-    inp=input()
-    if inp=="exit":
-        break
-    elif inp==read:
-        pass
-    else :
+    b=r.choice(a)
+    print(b)
+    i = input()
+    if i=="exit":
+        exit()
+    if i!=b:
         while True:
-            print(read)
-            i=input()
-            if i==read:
+            print("Wrong")
+            print(b)
+            i = input()
+            if i==b:
                 break
-            if i=="exit":
-                break
+            elif i=="exit":
+                exit()
 
 
-# another way
+    
 
-# import random as r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # from english_words import get_english_words_set
 # words = get_english_words_set(['web2'], lower=True)       # words is a set of all the english words
 # words2 = list(words)

@@ -34,4 +34,4 @@ void learning_map(){
 
 int main(){
     learning_map();
-}
+} 
