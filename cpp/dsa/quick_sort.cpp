@@ -1,0 +1,44 @@
+#include<iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int partition( vector<int>& arr , int low , int high ){
+    int pivot = arr[low];
+    int i = low ;
+    int j = high ;
+    while ( i<j){
+        while (arr[i]<=pivot && i<=high-1){
+            i++;
+        }
+        while (arr[j] >= pivot && j>= low+1){
+            j--;
+        }
+        if ( i<j ){
+            swap(arr[i],arr[j]);
+        }
+    }
+    swap(arr[low],arr[j]);
+    return j ;
+
+}
+
+void quickSort(vector<int>& arr , int low ,int high ){
+    if (low<high ){
+        int pIndex = partition( arr, low , high );
+        quickSort(arr , low , pIndex-1 );
+        quickSort(arr, pIndex+1 , high);
+        
+    }
+}
+
+
+int main(){
+    vector<int> nums = {8,6,7,4,5,2,3,1};
+    int k = nums.size();
+    quickSort(nums, 0 , k-1);
+
+    for ( int z : nums){
+        cout<< z << " ";
+    }
+
+}

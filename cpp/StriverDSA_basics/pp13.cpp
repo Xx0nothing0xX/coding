@@ -8,13 +8,10 @@ int mostFrequentElement(vector<int>& nums) {
         ump[nums[i]]++;
     }
     int k=0 ;
-    int m;
+    int m=0;
     for (auto& [key,val] : ump){
-        if (val>k || (val==k && m>k) ) k=val , m=key;
-        cout << key << " " << val << endl;
-
+        if (val>k || (val==k && m>key) ) k=val , m=key;
     }
-    cout<<m;
     return m;
 }
 

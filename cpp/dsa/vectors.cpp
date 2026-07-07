@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void learning_vectors(){
+void learning_vectors(vector<int> nums){
     vector<int> v;
     v.push_back(1);   //adds an element at the end of the vector
     v.emplace_back(2); // adds an element at the end of the vector but is faster than push_back
@@ -48,7 +48,13 @@ void learning_vectors(){
     v.swap(v2); // swaps the contents of v and v2
     v.clear(); // removes all the elements from the vector
     v.empty(); // returns true if the vector is empty, false otherwise
+    nums.pop_back();      // Removes the last element
+    nums.back();          // Returns the last element
+    nums.front();         // Returns the first element
+    nums.size();          // Number of elements
+    nums.clear();         // Removes all elements
 }
 int main(){
-    learning_vectors();
+    vector<int> arr = {1,2,3};
+    learning_vectors(arr);
 }
