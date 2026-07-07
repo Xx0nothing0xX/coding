@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naitik Jaiswal — Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">naitik.dev</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section class="hero" style="border-top: none;">
+    <div class="prompt">$ whoami</div>
+    <h1>Naitik Jaiswal<span class="cursor"></span></h1>
+    <div class="role">Engineer</div>
+    <p class="bio">
+      Hi, I'm Naitik — an engineer building things and learning as I go.
+    </p>
+  </section>
+
+  <section id="about">
+    <div class="section-label">$ cat about.md</div>
+    <h2>About</h2>
+    <p style="max-width: 560px; color: var(--ink-soft);">
+      Still figuring out exactly what to say here — but this is where a longer bio,
+      background, or "what I'm currently learning" can go.
+    </p>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">$ ls projects/</div>
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <div class="empty-state">
+        No projects yet — first one's coming soon.
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">$ contact --info</div>
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="tel:9039693883">📞 9039693883</a>
+      <a href="mailto:naitik.20254096@mnnit.ac.in">✉️ Email</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Naitik Jaiswal
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
