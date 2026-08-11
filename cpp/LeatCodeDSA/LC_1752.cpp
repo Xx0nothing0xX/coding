@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
+//BRUTE 
 bool check(vector<int>& nums) {
     int right = 0;
     while (right < nums.size()-1 ){
@@ -19,6 +19,7 @@ bool check(vector<int>& nums) {
             return false ;
         }
     }
+
     if (right < nums.size()-1){
         for (right ; right < nums.size()-1 ; right++){
         if(nums[right]>nums[right+1]){
@@ -34,6 +35,7 @@ bool check(vector<int>& nums) {
     return true;
 }
 
+// OPTIMAL SOLUTION 
 bool check2(vector<int>& nums) {
     int n = nums.size();
     int breaks = 0;

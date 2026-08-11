@@ -36,12 +36,12 @@ void zeroesEnd2(vector<int>& nums ){
         }
     }
     return;
-}   
+}
 
 
 
 int main (){
-    vector<int> arr = { 1,0,2,0,3};
+    vector<int> arr = { 1,0,2,3,3,3,3,0,3};
     zeroesEnd2(arr);
     for( int i =0 ; i < arr.size() ; i++){
         cout<< arr[i];

@@ -24,8 +24,8 @@ void rotate2(vector<int>& nums, int k){
 
 
 int main (){
-    vector<int> arr = {-2, 2, 4, 4, 4, 4, 5, 5};
-    rotate(arr , 9);
+    vector<int> arr = {1,2,3,4,5,6,7};
+    rotate2(arr , 3);
     for( int i =0 ; i < arr.size() ; i++){
         cout<< arr[i];
     }

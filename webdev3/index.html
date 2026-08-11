@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- This line is what makes the site responsive on phones. Never skip it. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naitik Jaiswal — Engineer</title>
+
+<!-- Google Fonts: JetBrains Mono for headings (nods to code/terminal), Inter for body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     1. DESIGN TOKENS — change these and the whole
+        site's look updates. Start here when you
+        want to customize colors/fonts later.
+     ============================================ */
+  :root {
+    --bg: #FAFAF9;
+    --bg-alt: #F0EFEC;
+    --ink: #1A1A1A;
+    --ink-soft: #5C5C5C;
+    --accent: #0F6E5E;      /* deep signal-green, used sparingly */
+    --line: #DEDCD6;
+    --radius: 6px;
+
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============================================
+     2. NAV
+     ============================================ */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+
+  nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hamburger — hidden by default, shown on mobile */
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  /* ============================================
+     3. HERO
+     ============================================ */
+  .hero {
+    padding: 100px 0 80px;
+  }
+
+  .prompt {
+    font-family: var(--font-display);
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .hero .role {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .hero p.bio {
+    max-width: 560px;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background: var(--accent);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* ============================================
+     4. SECTION HEADINGS (shared style)
+     ============================================ */
+  section {
+    padding: 60px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+
+  /* ============================================
+     5. PROJECTS
+     ============================================ */
+  .projects-grid {
+    display: grid;
+    /* auto-fit + minmax = cards rearrange automatically on smaller screens, no media query needed */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+
+  .project-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .project-card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .empty-state {
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  /* ============================================
+     6. CONTACT
+     ============================================ */
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .contact-links a {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .contact-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  footer {
+    padding: 32px 0 60px;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* ============================================
+     7. RESPONSIVE — mobile-first adjustments
+     ============================================ */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.8rem; }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 16px 24px;
+      gap: 16px;
+      display: none;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .menu-btn { display: block; }
+  }
+
+  /* Respect reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .cursor { animation: none; }
+  }
+
+  /* ============================================
+     8. JS-DRIVEN STATES
+     ============================================ */
+
+  /* Active nav link — gets this class via JS when its section is in view */
+  .nav-links a.active {
+    color: var(--accent);
+  }
+
+  /* Scroll reveal — sections start hidden/shifted, then animate in via JS adding .visible */
+  section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    section {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">naitik.dev</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- Hamburger button, only visible on mobile via CSS -->
+    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-top: none;">
+    <div class="prompt">$ whoami</div>
+    <h1>Naitik Jaiswal<span class="cursor"></span></h1>
+    <div class="role">Engineer</div>
+    <p class="bio">
+      Hi, I'm Naitik — an engineer building things and learning as I go.
+      <!-- TODO: replace this with a couple real sentences about what you build / what you're into -->
+    </p>
+  </section>
+
+  <!-- ============ ABOUT (optional expansion) ============ -->
+  <section id="about">
+    <div class="section-label">$ cat about.md</div>
+    <h2>About</h2>
+    <p style="max-width: 560px; color: var(--ink-soft);">
+      <!-- TODO: add 2-3 more sentences here if you want a fuller about section -->
+      Still figuring out exactly what to say here — but this is where a longer bio,
+      background, or "what I'm currently learning" can go.
+    </p>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="section-label">$ ls projects/</div>
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <!--
+        TODO: once you have projects, replace the empty-state div below with
+        cards like this one:
+
+        <div class="project-card">
+          <h3>Project Name</h3>
+          <p>One-line description of what it does and what you used to build it.</p>
+        </div>
+      -->
+      <div class="empty-state">
+        No projects yet — first one's coming soon.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="section-label">$ contact --info</div>
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <!-- TODO: swap in your real email and GitHub/LinkedIn links -->
+      <a href="tel:9039693883">📞 9039693883</a>
+      <a href="mailto:naitik.20254096@mnnit.ac.in">✉️ Email</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Naitik Jaiswal
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a link is clicked (nice UX touch on mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ============================================
+  // SCROLL REVEAL
+  // Uses IntersectionObserver to detect when a section
+  // enters the viewport, then adds the .visible class
+  // (which triggers the CSS transition we defined above).
+  // ============================================
+  const sections = document.querySelectorAll('section');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Stop watching once revealed — no need to keep checking
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15 // fires when 15% of the section is visible
+  });
+
+  sections.forEach(section => revealObserver.observe(section));
+
+  // ============================================
+  // ACTIVE NAV LINK ON SCROLL
+  // Highlights the nav link matching whichever section
+  // is currently in view.
+  // ============================================
+  const navLinkEls = document.querySelectorAll('.nav-links a');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const matchingLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (!matchingLink) return;
+
+      if (entry.isIntersecting) {
+        navLinkEls.forEach(link => link.classList.remove('active'));
+        matchingLink.classList.add('active');
+      }
+    });
+  }, {
+    // Triggers when a section is roughly in the middle of the screen
+    rootMargin: '-40% 0px -40% 0px'
+  });
+
+  // Only sections with an id (about, projects, contact) are tracked —
+  // the hero has no matching nav link, so it's skipped
+  document.querySelectorAll('section[id]').forEach(section => navObserver.observe(section));
+</script>
+
+</body>
+</html>
